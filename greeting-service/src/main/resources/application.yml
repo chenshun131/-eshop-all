@@ -1,15 +1,23 @@
 server:
-  port: 8768
+  port: 1121
 spring:
   application:
     name: greeting-service
+  profiles:
+    active: dev
+#
+feign:
+  hystrix:
+    enabled: true
 #
 eureka:
   client:
     service-url:
-      defaultZone: http://peer1:1111/eureka/,http://peer2:2222/eureka/
+      defaultZone: http://192.168.139.132:1111/eureka/
     fetch-registry: true
     registry-fetch-interval-seconds: 30
 #
 logging:
-  config: logback-service.xml
+  config: classpath:logback-service.xml
+#
+defaultName: defaultName

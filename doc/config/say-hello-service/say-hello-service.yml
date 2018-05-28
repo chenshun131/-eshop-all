@@ -1,5 +1,5 @@
 server:
-  port: 1131
+  port: 8080
 logging:
   config: classpath:logback-service.xml
 #
@@ -10,7 +10,7 @@ spring:
     name: say-hello-service
   zipkin:
     # Zipkin 访问地址
-    base-url: http://localhost:9411
+    base-url: http://zipkin:9411
   sleuth:
     sampler:
       # 抽样百分比，开发环境可以设置为 1 也就是 100%
@@ -20,6 +20,6 @@ eureka:
   client:
     service-url:
       # 指定注册中心地址
-      defaultZone: http://localhost:1111/eureka/
+      defaultZone: http://eureka-server:1111/eureka/
     fetch-registry: true
     registry-fetch-interval-seconds: 30

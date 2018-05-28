@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: greeting-service
+#
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:1111/eureka/
+    fetch-registry: true
+    registry-fetch-interval-seconds: 30
+#
+logging:
+  config: classpath:logback-service.xml
