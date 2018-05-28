@@ -1,9 +1,9 @@
 package com.chenshun.eshoppriceservice.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.chenshun.eshoppriceservice.mapper.ProductPriceMapper;
+import com.chenshun.eshoppriceservice.model.ProductPrice;
 import com.chenshun.eshoppriceservice.service.ProductPriceService;
-import com.roncoo.eshop.price.mapper.ProductPriceMapper;
-import com.roncoo.eshop.price.model.ProductPrice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;

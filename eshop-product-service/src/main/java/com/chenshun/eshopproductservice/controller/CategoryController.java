@@ -1,12 +1,11 @@
 package com.chenshun.eshopproductservice.controller;
 
+import com.chenshun.eshopproductservice.model.Category;
+import com.chenshun.eshopproductservice.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.roncoo.eshop.product.model.Category;
-import com.roncoo.eshop.product.service.CategoryService;
 
 @RestController
 @RequestMapping("/category")
