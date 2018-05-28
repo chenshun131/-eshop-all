@@ -1,0 +1,33 @@
+server:
+  port: 8766
+spring:
+  application:
+    name: zuul-server
+  profiles:
+    active: dev
+logging:
+  config: classpath:logback-zuulserver.xml
+#
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:2222/eureka/
+    fetch-registry: true
+    registry-fetch-interval-seconds: 30
+#
+management:
+  endpoints:
+    web:
+      exposure:
+        # 端外暴露的端点，使用 "*" 表示暴露所有的端点，bus-refresh 默认是不暴露的
+        include: "*"
+        exclude: env,beans
+#
+zuul:
+  routes:
+    say-hello-service:
+      path: /say-hello-service/**
+      serviceId: say-hello-service
+    greeting-service:
+      path: /greeting-service/**
+      serviceId: greeting-service

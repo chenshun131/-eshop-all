@@ -1,0 +1,24 @@
+server:
+  port: 9001
+logging:
+  config: classpath:logback-helloservice.xml
+#
+spring:
+  profiles:
+    active: dev
+  application:
+    name: helloservice
+  zipkin:
+    # Zipkin 访问地址
+    base-url: http://ci-server:9411
+  sleuth:
+    sampler:
+    # 抽样百分比，开发环境可以设置为 1 也就是 100%
+      probability: 1
+#
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:2222/eureka/
+    fetch-registry: true
+    registry-fetch-interval-seconds: 30

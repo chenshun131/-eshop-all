@@ -1,0 +1,17 @@
+server:
+  port: 6001
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # Git 仓库地址
+          uri: https://github.com/chenshun131/eshop-all
+          # 默认访问分支
+          default-label: master
+          # 仓库路径下的相对搜索位置，可以配置多个
+          search-paths: /doc/config
+          password: xxxxx
+          username: xxxxx

@@ -1,0 +1,13 @@
+server:
+  port: 1111
+spring:
+  application:
+    name: eureka-server
+#
+eureka:
+  instance:
+    # 设置当前 Eureka 注册中心地址，否则将会从当前所处的操作系统进行推测
+    hostname: 127.0.0.1
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:1111/eureka/
