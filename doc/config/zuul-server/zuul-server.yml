@@ -1,5 +1,5 @@
 server:
-  port: 1141
+  port: 8080
 spring:
   application:
     name: zuul-server
@@ -11,7 +11,7 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:1111/eureka/
+      defaultZone: http://eureka-server:1111/eureka/
     fetch-registry: true
     registry-fetch-interval-seconds: 30
 #
